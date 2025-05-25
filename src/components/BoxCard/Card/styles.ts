@@ -14,6 +14,8 @@ export const Container = styled.div<ContainerProps>`
   align-items: flex-start;
   justify-content: flex-start;
 
+  min-width: 330px;
+
   padding: ${space[2]} 0rem ${space[2]} ${space[4]};
 
   gap: ${space[4]};

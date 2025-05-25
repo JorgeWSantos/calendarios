@@ -1,4 +1,4 @@
-import { Box, Footer, Header, SideMenu, TopSideMenu } from '@abqm-ui2/react';
+import { Box, Dropdown, Footer, Header, SideMenu, TopSideMenu } from '@abqm-ui2/react';
 import data from './menu.ts';
 
 import * as S from './App.ts';
@@ -41,6 +41,18 @@ const events: BoxCardProps[] = [
   { title: 'Incrições abertas', data: dataCards2, variant: 'secondary', type: 'I' },
 ] as const;
 
+interface DataDropdown {
+  value: string;
+  label: string;
+  id: string;
+}
+
+const optionsDropdown: DataDropdown[] = [
+  { value: 'sp', label: 'São Paulo', id: '0' },
+  { value: 'rj', label: 'Rj', id: '1' },
+  { value: 'spsp', label: 'Sp', id: '1' },
+];
+
 function App() {
   return (
     <S.Container>
@@ -69,7 +81,9 @@ function App() {
               </S.BoxContentLeft>
 
               <S.BoxContentRight>
-                <p>Filters</p>
+                <S.TextBoxRight>Filtro</S.TextBoxRight>
+                <Dropdown data={optionsDropdown} label="Modalidade" />
+                <Dropdown data={[]} label="Estado" />
               </S.BoxContentRight>
             </S.BoxContent>
           </Box>

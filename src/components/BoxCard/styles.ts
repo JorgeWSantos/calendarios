@@ -11,12 +11,12 @@ export const BoxContentLeft = styled.div`
 
 export const BoxContent = styled.div`
   display: grid;
-  grid-template-columns: 8.75rem auto;
+  grid-template-columns: minmax(8rem, 8.75rem) auto;
 `;
 
 export const HeadingContainer = styled.div`
   display: flex;
-  width: 7.75rem;
+  /* width: 7.75rem; */
   padding: 1rem 1rem 0rem 0rem;
   flex-direction: column;
   align-items: flex-start;
@@ -32,7 +32,7 @@ export const HeadingText = styled(Heading).attrs({
   weight: 'bolder',
 })<HeadingTextProps>`
   height: 4.125rem;
-  width: 124px;
+  max-width: 124px;
   align-self: stretch;
   transform: scaleY(1.2);
 
