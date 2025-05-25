@@ -12,29 +12,45 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: grid;
-  height: 100%;
+  max-height: 100%;
+  padding: ${space[4]} 0 0 0;
   grid-template-columns: 13.5rem 1fr;
+  gap: 1rem;
 `;
 
 export const SideBar = styled.div`
-  padding: ${space[10]} ${space[5]} 0 0;
+  padding: 0 0 0 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 `;
 
 export const ContentBar = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${space[10]} 0 ${space[5]} 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export const ItemMenu = styled.select`
-  width: 200px;
-  height: 34px;
-  background-color: blue;
-  border: 1px solid black;
+export const BoxContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  height: 100%;
+  width: 100%;
+`;
+
+export const BoxContentLeft = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: ${space[10]};
+`;
+
+export const BoxContentRight = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
