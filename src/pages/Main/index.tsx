@@ -1,11 +1,12 @@
+import { useEffect } from 'react';
 import { Box, Dropdown, Footer, Header, SideMenu, TopSideMenu } from '@abqm-ui2/react';
 import data from './menu.ts';
 
-import * as S from './App.ts';
-import BoxCard, { type BoxCardProps } from './components/BoxCard/index.tsx';
+import * as S from './styles.ts';
 
-import { useAuth } from './auth/useAuth.ts';
-import { useEffect } from 'react';
+import BoxCard, { type BoxCardProps } from '@components/BoxCard';
+
+import { useAuth } from '../../auth/useAuth.ts';
 
 const dataCards = [
   {
@@ -56,14 +57,13 @@ const optionsDropdown: DataDropdown[] = [
   { value: 'spsp', label: 'Sp', id: '1' },
 ];
 
-function App() {
-  const { user } = useAuth();
-  // const { user, login } = useAuth();
+function Main() {
+  const { user, login } = useAuth();
 
-  // useEffect(() => {
-  //   console.log('login');
-  //   login({ email: 'jorgews.dev@gmail.com', password: 'minio20' });
-  // }, [login]);
+  useEffect(() => {
+    console.log('login');
+    login({ email: 'jorgews.dev@gmail.com', password: 'minio20' });
+  }, [login]);
 
   return (
     <S.Container>
@@ -103,4 +103,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
