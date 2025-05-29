@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "link:monorepo": "npm link @abqm-ui2/tokens @abqm-ui2/react @abqm-ui2/icons"
+    "link:monorepo": "npm link @abqm-ui2/tokens @abqm-ui2/react @abqm-ui2/icons",
+    "update:ui": "npm update @abqm-ui2/icons @abqm-ui2/react @abqm-ui2/tokens",
+    "upgrade:ui": "npx npm-check-updates -u @abqm-ui2/icons @abqm-ui2/react @abqm-ui2/tokens && npm install"
   },
   "dependencies": {
     "@abqm-ui2/icons": "^1.0.1",
@@ -31,6 +33,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "npm-check-updates": "^18.0.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",
