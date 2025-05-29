@@ -1,4 +1,10 @@
-import { AwardFillIcon, BroadcastIcon, ListOlIcon, StarIcon } from '@abqm-ui2/icons';
+import {
+  AwardFillIcon,
+  BroadcastIcon,
+  ListOlIcon,
+  PencilSquareIcon,
+  StarIcon,
+} from '@abqm-ui2/icons';
 import {
   Card,
   CardLive,
@@ -57,7 +63,7 @@ const CardInscriptionsComponent = () => (
 
       <BottomCardInscriptions>
         <ButtonIcon text="Inscrições">
-          <StarIcon />
+          <PencilSquareIcon />
         </ButtonIcon>
         <ButtonIcon text="Participações">
           <StarIcon />

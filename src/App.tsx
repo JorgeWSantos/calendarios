@@ -83,7 +83,7 @@ function App() {
               <S.BoxContentRight>
                 <S.TextBoxRight>Filtro</S.TextBoxRight>
                 <Dropdown data={optionsDropdown} label="Modalidade" />
-                <Dropdown data={[]} label="Estado" />
+                <Dropdown data={optionsDropdown} label="Estado" />
               </S.BoxContentRight>
             </S.BoxContent>
           </Box>
