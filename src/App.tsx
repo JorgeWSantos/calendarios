@@ -4,6 +4,9 @@ import data from './menu.ts';
 import * as S from './App.ts';
 import BoxCard, { type BoxCardProps } from './components/BoxCard/index.tsx';
 
+import { useAuth } from './auth/useAuth.ts';
+import { useEffect } from 'react';
+
 const dataCards = [
   {
     id: 1,
@@ -54,16 +57,22 @@ const optionsDropdown: DataDropdown[] = [
 ];
 
 function App() {
+  const { user } = useAuth();
+  // const { user, login } = useAuth();
+
+  // useEffect(() => {
+  //   console.log('login');
+  //   login({ email: 'jorgews.dev@gmail.com', password: 'minio20' });
+  // }, [login]);
+
   return (
     <S.Container>
       <S.Content>
         <S.SideBar>
-          <TopSideMenu
-            userName="Jorge Santos"
-            srcImage="https://avatars.githubusercontent.com/u/36779335?v=4"
-          />
+          <TopSideMenu userName={user?.nome_pessoa} srcImage={user?.foto || ''} />
           <SideMenu data={data} />
         </S.SideBar>
+
         <S.ContentBar>
           <Header text="Calendários" />
           <Box style={{ padding: '40px 16px 16px' }}>
