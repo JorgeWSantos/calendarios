@@ -58,12 +58,12 @@ const optionsDropdown: DataDropdown[] = [
 ];
 
 function Main() {
-  const { user, login } = useAuth();
+  const { user } = useAuth();
 
-  useEffect(() => {
-    console.log('login');
-    login({ email: 'jorgews.dev@gmail.com', password: 'minio20' });
-  }, [login]);
+  // useEffect(() => {
+  //   console.log('login');
+  //   login({ email: 'jorgews.dev@gmail.com', password: 'minio20' });
+  // }, [login]);
 
   return (
     <S.Container>

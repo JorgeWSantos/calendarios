@@ -1,5 +1,6 @@
 // src/services/api.ts
 import axios from 'axios';
+import { getToken } from './auth';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -10,7 +11,7 @@ const api = axios.create({
 
 // Adiciona o interceptor depois de criar a instância
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
+  const token = getToken();
 
   console.log('api.interceptors:token', token);
 

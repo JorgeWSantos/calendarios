@@ -37,8 +37,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       senha: password,
     });
 
-    console.log('data', data);
-
     if (data.fields.acesso_permitido) {
       localStorage.setItem('token', data.fields.token);
     } else {
