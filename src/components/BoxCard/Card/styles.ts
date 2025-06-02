@@ -1,4 +1,4 @@
-import { colors, radii, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, radii, space } from '@abqm-ui2/tokens';
 import styled, { css } from 'styled-components';
 import type { BoxCardsTypes, BoxCardsVariants } from '..';
 import { Text } from '@abqm-ui2/react';
@@ -16,7 +16,7 @@ export const Container = styled.div<ContainerProps>`
 
   min-width: 330px;
 
-  padding: ${space[2]} 0rem ${space[2]} ${space[4]};
+  padding: ${space[2]} 1rem ${space[2]} ${space[4]};
 
   gap: ${space[4]};
 
@@ -27,6 +27,24 @@ export const Container = styled.div<ContainerProps>`
     css`
       border-left: ${radii.xs} solid ${colors.white85};
     `}
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    border-top: ${radii.xs} solid ${colors.green500};
+    border-left: unset;
+    padding: ${space[2]} 0 ${space[2]} 0;
+
+    ${({ variant }) =>
+      variant === 'secondary' &&
+      css`
+        border-top: ${radii.xs} solid ${colors.white85};
+        border-left: unset;
+      `}
+  }
+
+  @media (max-width: 430px) {
+    max-width: 100%;
+    min-width: 300px;
+  }
 `;
 
 interface CardProps {
@@ -41,13 +59,13 @@ export const Card = styled.div<CardProps>`
   ${({ type }) =>
     (type === 'A' || !type) &&
     css`
-      width: 21.25rem;
+      max-width: 21.25rem;
     `}
 
   ${({ type }) =>
     (type === 'I' || !type) &&
     css`
-      width: 18.625rem;
+      max-width: 18.625rem;
     `}
 
   min-height: 8.8rem;
@@ -63,13 +81,14 @@ export const Card = styled.div<CardProps>`
     css`
       border: ${radii.px} solid ${colors.emeraldGreen25};
     `}
+
+  @media (max-width: 430px) {
+    max-width: 100%;
+    min-width: 300px;
+  }
 `;
 
-interface CardLeftProps {
-  variant: BoxCardsVariants;
-}
-
-export const CardLeft = styled.div<CardLeftProps>`
+export const CardLeft = styled.div<{ variant: BoxCardsVariants }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -134,6 +153,8 @@ export const ContainerCardInscriptions = styled.div`
   padding: ${space[4]} ${space[2]};
 
   background-color: ${colors.white25};
+
+  text-align: right;
 `;
 
 export const ContentCardInscriptions = styled.div`

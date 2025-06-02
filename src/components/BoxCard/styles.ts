@@ -1,5 +1,5 @@
 import { Heading } from '@abqm-ui2/react';
-import { colors } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors } from '@abqm-ui2/tokens';
 import styled, { css } from 'styled-components';
 import type { BoxCardsVariants } from '.';
 
@@ -12,6 +12,11 @@ export const BoxContentLeft = styled.div`
 export const BoxContent = styled.div`
   display: grid;
   grid-template-columns: minmax(8rem, 8.75rem) auto;
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    grid-template-columns: none;
+    grid-template-rows: 4.5rem auto;
+  }
 `;
 
 export const HeadingContainer = styled.div`
@@ -23,14 +28,10 @@ export const HeadingContainer = styled.div`
   align-self: stretch;
 `;
 
-interface HeadingTextProps {
-  variant: BoxCardsVariants;
-}
-
 export const HeadingText = styled(Heading).attrs({
   size: 'md',
   weight: 'bolder',
-})<HeadingTextProps>`
+})<{ variant: BoxCardsVariants }>`
   height: 4.125rem;
   max-width: 124px;
   align-self: stretch;
@@ -49,6 +50,10 @@ export const HeadingText = styled(Heading).attrs({
     css`
       color: ${colors.white85};
     `}
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    text-align: left;
+  }
 `;
 
 export const BoxContentRight = styled.div`
