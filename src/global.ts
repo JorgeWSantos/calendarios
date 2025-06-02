@@ -1,4 +1,4 @@
-import { fonts } from '@abqm-ui2/tokens';
+import { colors, fonts } from '@abqm-ui2/tokens';
 import { createGlobalStyle } from 'styled-components';
 import backgroundDesktop from '@assets/images/background.jpg';
 import backgroundMobile from '@assets/images/background-mobile.png';
@@ -15,6 +15,11 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans - serif;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
 }
 
 :root {
@@ -95,4 +100,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+ /* Scroll para navegadores WebKit (Chrome, Safari, Edge) */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: ${colors.green500};
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: ${colors.green700};
+  }
+
+  /* Scroll para Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: ${colors.white50} transparent;
+  }
 `;
