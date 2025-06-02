@@ -1,14 +1,18 @@
 import { Text } from '@abqm-ui2/react';
-import { colors, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, space } from '@abqm-ui2/tokens';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
   padding: 0 ${space[5]};
   max-width: 100rem;
   margin: 0 auto;
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    padding: 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -30,8 +34,8 @@ export const SideBar = styled.div`
 export const ContentBar = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: start;
 
-  display: flex;
   justify-content: center;
   align-items: center;
 `;
@@ -68,3 +72,47 @@ export const TextBoxRight = styled(Text).attrs({
   fontWeight: 'semiBold',
   color: colors.emeraldGreen75,
 })``;
+
+//Mobile
+
+export const MobileLayout = styled.div`
+  /* height: 95vh; */
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MobileHeader = styled.div`
+  height: 60px;
+  width: 100%;
+  background-color: green;
+  flex-shrink: 0;
+`;
+
+export const MobileScroll = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  margin: 8px;
+
+  overflow-y: auto;
+  border-radius: 4px;
+`;
+
+export const ContentBarMobile = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 100%;
+  height: 100%;
+`;
+
+export const BoxContentMobile = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: ${space[10]};
+`;
